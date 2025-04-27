@@ -1,0 +1,296 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+    position: relative; /* For pseudo-element positioning */
+}
+
+body::before, body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 10%; /* Width of each side strip */
+    background-image: url('Project_sidebar.jpg'); /* Your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1; /* Behind content */
+}
+
+body::before {
+    left: 0; /* Left strip */
+}
+
+body::after {
+    right: 0; /* Right strip */
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px 0;
+    max-width: 70%; /* Match showcase content width */
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #000;
+}
+
+.logo {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header img.logo {
+    max-width: 300px; /* Adjust size as needed */
+    height: auto;
+    display: block;
+    margin: 10px auto; /* Center with spacing */
+    transition: opacity 0.3s ease; /* Smooth fade */
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #d4af37; /* Gold for veteran-owned */
+    font-style: italic;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    margin-top: 20px; /* Space for fixed header */
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    font-size: 1.1em;
+}
+
+.hero .hero-logo {
+    max-width: 200px; /* Adjust size as needed */
+    height: auto;
+    margin-top: 20px; /* Space between heading and logo */
+    margin-bottom: 20px; /* Space between logo and paragraph */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff6200; /* Orange for thermal theme */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #e05500;
+}
+
+/* Why Inspections Matter */
+.why-inspections {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.why-inspections h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.reasons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.reason {
+    text-align: center;
+    max-width: 300px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content vertically and horizontally */
+}
+.reason .icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+    display: inline-block; /* Allow precise centering */
+}
+
+/* Showcase Section */
+.showcase {
+    padding: 30px 20px; /* Reduced from 50px */
+}
+.showcase h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px; /* Reduced from 40px */
+}
+.example {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px; /* Reduced from 40px */
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+.example.visible {
+    opacity: 1;
+}
+
+.left-to-center {
+    justify-content: center; /* Center instead of left */
+    max-width: 80%; /* Use more page width */
+    margin-left: auto;
+    margin-right: auto;
+}
+.center-to-right {
+    justify-content: center; /* Center instead of right */
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.example img {
+    width: 100%;
+    max-width: 500px; /* Larger images */
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.center-to-right img {
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+.example-text h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.example-text p {
+    max-width: 400px;
+}
+
+/* Credentials Section */
+.credentials {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.credentials h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.credentials-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.credential {
+    max-width: 200px;
+    text-align: center;
+}
+
+.reason .icon, .credential .icon {
+    font-size: 2.5em; /* Slightly larger for prominence */
+    color: #d4af37; /* Gold to match your theme */
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #111;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #ff6200;
+}
+
+.veteran-owned {
+    font-style: italic;
+    color: #d4af37;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body::before, body::after {
+        width: 10%; /* Thinner strips on mobile */
+    }
+    header {
+        max-width: 100%; /* Full width on mobile */
+        margin-left: 50px; /* Match thinner strips */
+        margin-right: 50px;
+    }
+    .hero, .why-inspections, .showcase, .credentials, footer {
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px 15px;
+    }
+    .example {
+        flex-direction: column;
+        max-width: 100%;
+        align-items: center;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 15px;
+        border-radius: 10px;
+    }
+    .left-to-center, .center-to-right {
+        justify-content: center;
+        max-width: 100%;
+        margin-left: 0;
+    }
+    .example img {
+        margin: 0 0 20px 0;
+        width: 100%;
+        max-width: 400px;
+    }
+    .center-to-right img {
+        margin: 0 0 20px 0;
+    }
+}
+
+    .hero h1 {
+        font-size: 1.8em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+}
